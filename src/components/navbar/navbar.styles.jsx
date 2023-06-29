@@ -41,6 +41,8 @@ export const NavLink = styled.div`
   padding: 0 2%;
   font-size: 18px;
   margin-right: 2em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   &:hover{
     color: pink;
     cursor: pointer;
