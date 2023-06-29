@@ -1,13 +1,14 @@
 import NavBar from "../navbar/navbar.component";
 import HeroBanner from "../herobanner/hero-banner.component";
+import {HeroContainer} from "./hero.styles";
 const Hero = () =>{
 
 
     return (
-        <div>
+        <HeroContainer>
             <NavBar />
             <HeroBanner />
-        </div>
+        </HeroContainer>
     )
 }
 

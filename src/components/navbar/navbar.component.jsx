@@ -1,9 +1,8 @@
 
-import {LinkContainer, LogoContainer, NavContainer, NavLogo} from "./navbar.styles";
+import {NavLink, LinkContainer, LogoContainer, NavContainer, NavLogo} from "./navbar.styles";
 const NavBar = () => {
 
     return (
-
         <NavContainer>
             <LogoContainer>
                 <NavLogo/>
@@ -12,10 +11,10 @@ const NavBar = () => {
                 </h3>
             </LogoContainer>
             <LinkContainer>
-                <div>Home</div>
-                <div>About</div>
-                <div>Work</div>
-                <div>Contact</div>
+                <NavLink>Home</NavLink>
+                <NavLink>About</NavLink>
+                <NavLink>Work</NavLink>
+                <NavLink>Contact</NavLink>
             </LinkContainer>
         </NavContainer>
     )
