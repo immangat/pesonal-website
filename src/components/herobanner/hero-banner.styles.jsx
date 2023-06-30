@@ -27,7 +27,7 @@ export const HeroBannerTextContainer = styled.div`
 
 export const HeroWelcome = styled.span`
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 800;
 `
 
