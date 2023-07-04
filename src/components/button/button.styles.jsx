@@ -5,14 +5,26 @@ export const BUTTON_TYPE_CLASSES = {
   white: "white",
 };
 
-const buttonColor = (buttonType) => {
+const buttonColor = (buttonType, hover) => {
+    if(hover){
+        return {
+            [BUTTON_TYPE_CLASSES.base]: "white",
+            [BUTTON_TYPE_CLASSES.white]: "#ff8c92",
+        }[buttonType];
+    }
   return {
     [BUTTON_TYPE_CLASSES.base]: "#263238",
     [BUTTON_TYPE_CLASSES.white]: "white",
   }[buttonType];
 };
 
-const fontColor = (buttonType) =>{
+const fontColor = (buttonType, hover) =>{
+    if(hover){
+        return {
+            [BUTTON_TYPE_CLASSES.base]: "#263238",
+            [BUTTON_TYPE_CLASSES.white]: "white",
+        }[buttonType];
+    }
     return {
         [BUTTON_TYPE_CLASSES.base]: "white",
         [BUTTON_TYPE_CLASSES.white]: "#263238",
@@ -31,9 +43,9 @@ export const But = styled.button`
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   &:hover{
-    background-color: white;
-    color: #263238;
-    border: 2px #263238 solid;
+    background-color: ${({ butType }) => buttonColor(butType, true)};
+    color: ${({ butType }) => fontColor(butType, true)};
+    border: ${({ butType }) => butType === 'base' ? '2px #263238 solid' : '2px transparent solid'};
     transition: background-color 200ms ease, color 200ms ease;
   }
 `;
