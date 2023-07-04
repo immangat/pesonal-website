@@ -1,6 +1,7 @@
 import {CodeContainer, SkillContainer, SkillsContainer} from "./skills.styles";
 import {useEffect, useState} from "react";
 import CodeBlock from "../code-block/code-block.component";
+import TypeWriter from "../type-writer/type-writer.component";
 
 const Skills = () => {
     const skills = [
@@ -50,9 +51,8 @@ const Skills = () => {
     const [counter, setCounter] = useState(0);
     const selectedSkill = skills.length > 0 ? skills[counter % skills.length] : null;
 
-
     useEffect(() => {
-        setTimeout(() => setCounter(counter + 1), 1500);
+        setTimeout(() => setCounter(counter + 1), 2000);
     }, [counter]);
 
     return (
@@ -60,14 +60,18 @@ const Skills = () => {
             <SkillContainer>
                 <h3>SKILLS:</h3>
                 <h1>
-                    {selectedSkill.language.toUpperCase()}
+                    <TypeWriter
+                        text = {selectedSkill.language.toUpperCase()}
+                        delay={112}
+                    />
                 </h1>
             </SkillContainer>
 
             <CodeContainer>
-                <CodeBlock
-                    code = {selectedSkill.code}
-                    language={selectedSkill.language}
+                <TypeWriter
+                    text = {selectedSkill.code}
+                    delay={selectedSkill.code / 2000}
+                    type= 'code'
                 />
             </CodeContainer>
         </SkillsContainer>
