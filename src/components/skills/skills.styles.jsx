@@ -28,6 +28,9 @@ export const CodeContainer = styled.div`
   min-width: 500px;
   min-height: 400px;
   text-align: left;
+  display: flex;
+  align-items: center;
+  margin: auto 0;
   code,
   pre {
     background: transparent !important;

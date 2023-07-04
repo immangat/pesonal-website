@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 
 export const AboutContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template: auto/ 1fr 2fr;
   flex-direction: row;
+  padding: 0 10%;
   height: 100vh;
   justify-content: center;
   align-items: center;
